@@ -1,0 +1,154 @@
+$cor-verde-escuro: #004d40;
+$cor-fundo-claro: #fff;
+$cor-texto-claro: #b2dfdb; $cor-texto-escuro: #333;
+
+.secao-container {
+  padding-bottom: 60px;
+}
+
+.secao-missao {
+  background-color: $cor-verde-escuro;
+  color: white;
+  padding: 60px 20px;
+  margin-top: 20px;
+  text-align: center;
+
+  .missao-cabecalho {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      text-align: left;
+    }
+  }
+
+  .titulo-principal {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+
+  .subtitulo {
+    font-size: 1.1rem;
+    color: $cor-texto-claro;
+    margin-bottom: 30px;
+  }
+
+  .missao-cards-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex; /* Changed from grid to flex */
+    flex-wrap: wrap; /* Added for flexbox */
+    justify-content: center; /* Added for flexbox */
+    gap: 20px; /* Works with flexbox too */
+
+    .missao-card {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 30px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Added transform and box-shadow to transition */
+      flex: 1 1 100%; /* Default to full width on small screens */
+      max-width: 350px; /* Limit individual card width */
+
+      @media (min-width: 768px) {
+        flex: 1 1 calc(33.333% - 14px); /* Approx 3 cards per row, accounting for gap */
+      }
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+        transform: translateY(-5px); /* Lift effect */
+        box-shadow: 0 10px 20px rgba($cor-verde-escuro, 0.4); /* Colored shadow */
+      }
+
+      .card-titulo {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: white;
+      }
+
+      .card-texto {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #ccc;
+      }
+    }
+  }
+}
+.secao-impacto {
+  padding: 60px 20px;
+  background-color: $cor-fundo-claro;
+}
+.missao-cabecalho {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    text-align: left;
+  }
+}
+.secao-impacto .titulo-principal {
+  color: $cor-texto-escuro;
+  font-size: 2.5rem;
+}
+
+.secao-impacto .subtitulo {
+  color: #555;
+}
+
+.impacto-cards-grid {
+  max-width: 1350px;
+  margin: 40px auto 0;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+.impacto-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 283px;
+  min-height: 200px;
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 10px 7px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transform and box-shadow to transition */
+
+  @media (min-width: 768px) {
+    padding: 15px 7.5px;
+  }
+
+  &:hover {
+    transform: translateY(-5px); /* Lift effect */
+    box-shadow: 0 10px 20px rgba($cor-verde-escuro, 0.3); /* Colored shadow */
+  }
+
+  .impacto-numero {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: $cor-verde-escuro;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .impacto-descricao {
+    font-size: 0.95rem;
+    color: #777;
+    margin: 0;
+  }
+}

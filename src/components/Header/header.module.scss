@@ -1,0 +1,114 @@
+$cor-primaria-verde: #00745a;
+$cor-fundo-claro: #f8f8f8;
+$cor-texto-escuro: #333;
+$cor-borda-azul: #007bff;
+
+.cabecalho {
+  background-color: $cor-fundo-claro;
+  padding: 15px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-top: 3px solid $cor-borda-azul;
+}
+
+.cabecalho-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cabecalho-logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: $cor-texto-escuro;
+
+  .icone-estetoscopio {
+    font-size: 1.5rem;
+    color: $cor-borda-azul;
+    margin-right: 8px;
+  }
+}
+
+.hamburguer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  .barra {
+    width: 30px;
+    height: 3px;
+    background-color: $cor-texto-escuro;
+    transition: all 0.3s linear;
+    border-radius: 10px;
+
+    &.aberto {
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+      }
+    }
+  }
+}
+.navegacao {
+  display: none;
+
+  &.menuAtivo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    position: static;
+    padding: 0;
+    box-shadow: none;
+    flex-direction: row;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: $cor-texto-escuro;
+    font-size: 1rem;
+    padding: 5px 15px;
+    transition: color 0.3s;
+    font-size: 20px;
+    &:hover {
+      color: $cor-borda-azul;
+    }
+  }
+}
+
+.btn-voluntario {
+  text-decoration: none;
+  background-color: $cor-primaria-verde;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: darken($cor-primaria-verde, 10%);
+  }
+}
