@@ -1,0 +1,132 @@
+$cor-verde-escuro: #004d40;
+$cor-verde-medio: #00695c;
+$cor-texto-claro: #b2dfdb;
+$cor-texto-escuro: #333;
+$cor-borda: #e0e0e0;
+
+/* ───── Hero ───── */
+.hero {
+  background-color: $cor-verde-escuro;
+  color: white;
+  text-align: center;
+  padding: 70px 20px 60px;
+}
+
+.titulo {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.subtitulo {
+  font-size: 1.1rem;
+  color: $cor-texto-claro;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* ───── Serviços ───── */
+.secaoServicos {
+  padding: 70px 20px;
+  background-color: #fff;
+}
+
+.cabecalho {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 48px;
+}
+
+.secaoTitulo {
+  font-size: 2rem;
+  font-weight: 800;
+  color: $cor-texto-escuro;
+  margin-bottom: 10px;
+}
+
+.secaoSubtitulo {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* card grid via flex – no CSS Grid */
+.grade {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.card {
+  flex: 1 1 240px;
+  max-width: 280px;
+  border: 1px solid $cor-borda;
+  border-radius: 12px;
+  padding: 32px 24px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  cursor: default;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 32px rgba($cor-verde-escuro, 0.15);
+    border-color: rgba($cor-verde-medio, 0.4);
+  }
+}
+
+.cardEmoji {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.cardTitulo {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: $cor-verde-escuro;
+  margin-bottom: 10px;
+}
+
+.cardTexto {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.55;
+}
+
+/* ───── CTA ───── */
+.secaoCta {
+  background-color: $cor-verde-medio;
+  color: white;
+  text-align: center;
+  padding: 70px 20px;
+}
+
+.ctaTitulo {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.ctaSubtitulo {
+  font-size: 1rem;
+  color: $cor-texto-claro;
+  margin-bottom: 32px;
+}
+
+.btnCta {
+  display: inline-block;
+  background-color: white;
+  color: $cor-verde-escuro;
+  font-weight: 700;
+  padding: 14px 40px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    background-color: #e0f2f1;
+    transform: translateY(-2px);
+  }
+}
