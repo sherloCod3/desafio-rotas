@@ -3,6 +3,7 @@ $cor-secundaria-roxo: #9c27b0;
 $cor-texto-escuro: #333;
 $cor-fundo-claro: #fff;
 $cor-borda-amarela: #ffeb3b;
+@use 'sass:color';
 
 .pagina {
   min-height: 100vh;
@@ -87,6 +88,7 @@ $cor-borda-amarela: #ffeb3b;
     width: 45%;
     display: block;
   }
+
   img {
     width: 100%;
   }
@@ -102,7 +104,7 @@ $cor-borda-amarela: #ffeb3b;
     z-index: 1;
   }
 
-  & > {
+  &>img {
     width: 100%;
     height: auto;
     display: block;
@@ -129,6 +131,7 @@ $cor-borda-amarela: #ffeb3b;
       max-width: none;
     }
   }
+
   .btn-primario,
   .btn-secundario {
     width: 500px;
@@ -145,8 +148,9 @@ $cor-borda-amarela: #ffeb3b;
     background-color: $cor-primaria-verde;
     color: white;
     transition: background-color 0.3s;
+
     &:hover {
-      background-color: darken($cor-primaria-verde, 10%);
+      background-color: color.adjust($cor-primaria-verde, $lightness: 10%);
     }
   }
 
@@ -156,8 +160,9 @@ $cor-borda-amarela: #ffeb3b;
     color: $cor-primaria-verde;
     text-decoration: none;
     transition: background-color 0.3s;
+
     &:hover {
-      background-color: lighten($cor-primaria-verde, 30%);
+      background-color: color.adjust($cor-primaria-verde, $lightness: 30%);
     }
   }
 }

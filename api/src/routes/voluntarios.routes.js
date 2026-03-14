@@ -1,8 +1,9 @@
 import { Router } from 'express';
-import profissionais from '../data/voluntarios.js';
+import profissionais, { incrementId } from '../data/voluntarios.js';
 import validateProfissional from '../validators/voluntario.validator.js';
 
 const router = Router();
+
 
 /**
  * GET /api/profissionais
@@ -41,7 +42,7 @@ router.post('/', (req, res) => {
   const { nome, email, telefone, especialidade, mensagem } = req.body;
 
   const novoProfissional = {
-    id: profissionais.length + 1,
+    id: incrementId(),
     nome: nome.trim(),
     email: email.trim().toLowerCase(),
     telefone: telefone.replace(/[\s\-().+]/g, ''), // armazena apenas os dígitos

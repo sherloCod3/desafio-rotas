@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 $cor-verde-fundo: #00695c;
 $cor-texto-escuro: #000;
 $cor-borda: #ccc;
@@ -137,8 +139,46 @@ $cor-borda: #ccc;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 
-  &:hover {
-    background-color: darken($cor-verde-fundo, 8%);
+  &:hover:not(:disabled) {
+    background-color: color.adjust($cor-verde-fundo, $lightness: 8%);
     transform: translateY(-2px);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+/* Estado de sucesso */
+.sucesso {
+  text-align: center;
+  padding: 30px 0;
+
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: $cor-verde-fundo;
+    font-weight: bold;
+  }
+}
+
+/* Lista de erros retornados pela API */
+.listaErros {
+  background-color: #fff3f3;
+  border: 1px solid #f5c2c2;
+  border-radius: 8px;
+  padding: 12px 20px;
+  margin-bottom: 16px;
+  list-style: none;
+
+  li {
+    color: #c0392b;
+    font-size: 0.88rem;
+    margin-bottom: 4px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }

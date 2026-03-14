@@ -2,6 +2,7 @@ $cor-primaria-verde: #00745a;
 $cor-fundo-claro: #f8f8f8;
 $cor-texto-escuro: #333;
 $cor-borda-azul: #007bff;
+@use 'sass:color';
 
 .cabecalho {
   background-color: $cor-fundo-claro;
@@ -58,15 +59,18 @@ $cor-borda-azul: #007bff;
       &:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
       }
+
       &:nth-child(2) {
         opacity: 0;
       }
+
       &:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -7px);
       }
     }
   }
 }
+
 .navegacao {
   display: none;
 
@@ -75,6 +79,7 @@ $cor-borda-azul: #007bff;
     align-items: center;
     gap: 20px;
   }
+
   @media (min-width: 768px) {
     display: flex;
     align-items: center;
@@ -92,6 +97,7 @@ $cor-borda-azul: #007bff;
     padding: 5px 15px;
     transition: color 0.3s;
     font-size: 20px;
+
     &:hover {
       color: $cor-borda-azul;
     }
@@ -109,6 +115,6 @@ $cor-borda-azul: #007bff;
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: darken($cor-primaria-verde, 10%);
+    background-color: color.adjust($cor-primaria-verde, $lightness: 10%);
   }
 }
